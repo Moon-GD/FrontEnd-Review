@@ -34,6 +34,8 @@ useMemo(() => highCostFunction(a, b), [a, b]);
 - 의존성 빈 배열을 전달하는 경우? → 최초 1회만 실행. 이후에는 기억한 값을 그대로 반환
 - 의존성 배열 내부에 객체를 전달하는 경우? → 객체 값 변화를 인지하지 못할 수도 있기에 지양하는 게 좋다
 
+<br>
+
 ## 참고 링크
 
 - <a href="https://ko.legacy.reactjs.org/docs/hooks-reference.html#usememo">React Docs</a>
