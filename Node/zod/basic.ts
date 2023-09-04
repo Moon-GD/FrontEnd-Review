@@ -16,10 +16,17 @@ console.log(numberSchema.safeParse('Hello zod'));  // { success: false, error: [
 // 2️⃣ object usage
 const userInfoSchema = z.object({
     name: z.string(),
-    age: z.number()
+    age: z.number(),
 });
 
 console.log(userInfoSchema.parse({
     name: 'Moon',
     age: 26,
+}));  // { name: 'Moon', age: 26 }
+
+// 아래의 것도 thorw error 없이 정상 출력되므로 알아두기!
+console.log(userInfoSchema.parse({
+    name: 'Moon',
+    age: 26,
+    gender: 'male',
 }));  // { name: 'Moon', age: 26 }

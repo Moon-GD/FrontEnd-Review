@@ -32,7 +32,7 @@ $ npm i zod@canary
 
 ## 3️⃣ 간단 문법 활용해보기
 
-- <a href="./usage.ts">간단한 코드 바로 보기</a>
+- <a href="./basic.ts">간단한 코드 바로 보기</a>
 - zod primitive types
 
 | 메소드        | type             |
@@ -45,6 +45,14 @@ $ npm i zod@canary
 | z.any()       | accepts all      |
 | z.unknown()   | accepts all      |
 | z.never()     | accept no values |
+
+<br />
+
+## 4️⃣ 원시 값의 형 강제 변환 (Coercion)
+
+- 개인적으로는 좋은 방법이라고 생각하지는 않지만, 상황에 따라 형 변환이 강제로 필요할 경우 활용 가능
+- type checking에서도 강제로 형 변환을 통해 통과시킬 수도 있음!
+- <a href="./coericon.ts">소스 코드</a>에 한 번 끄적여보면 충분할 듯하다.
 
 <br />
 
