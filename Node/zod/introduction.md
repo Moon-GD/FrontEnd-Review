@@ -56,6 +56,13 @@ $ npm i zod@canary
 
 <br />
 
+## 5️⃣ 추가 검증
+
+- refine, min, max 등의 체이닝을 통해서 추가 검증 조건을 검증할 수 있다
+- <a href="./additionalTest.ts">예제 파일 확인</a>
+
+<br />
+
 <hr />
 
-updated : 2023.09.04 (Mon)
+updated : 2023.09.05 (Mon)
