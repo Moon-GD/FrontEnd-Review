@@ -1,0 +1,33 @@
+import { z } from 'zod';
+import { useForm, type SubmitHandler, type SubmitErrorHandler } from "react-hook-form";
+
+const userInfoSchema = z.object({
+    name: z.string().min(2, { message:'2글자 이상' }),
+    age: z.number().min(1, { message : 'age should be positive'}),
+});
+
+type TUserInfoType = z.infer<typeof userInfoSchema>;
+
+const BasicUsage = () => {
+    const { register, handleSubmit } = useForm<TUserInfoType>();
+
+    const onFormSubmit:SubmitHandler<TUserInfoType> = (userInfo: TUserInfoType) => {
+        alert(JSON.stringify(userInfo));
+    }
+
+    const onFormSubmitError:SubmitErrorHandler<TUserInfoType> = (errors, e) => {
+        alert(JSON.stringify(errors));
+    }
+
+    return (
+        <form onSubmit={handleSubmit(onFormSubmit, onFormSubmitError)}>
+            <label htmlFor="name">이름 : </label>
+            <input type="text" {...register('name')} id='name'/>
+            <label htmlFor="age">&nbsp; 나이는 필수 값 : </label>
+            <input type="text"  {...register('age', { required: true })} id='age'/>
+            <input type="submit" value='submit'/>
+        </form>
+    )
+}
+
+export default BasicUsage;
