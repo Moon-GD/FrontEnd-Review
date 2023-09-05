@@ -17,7 +17,14 @@ const BasicUsage = () => {
 
     const onFormSubmitError:SubmitErrorHandler<TUserInfoType> = (errors, e) => {
         // TODO : errors가 문자열로 파싱이 안됨 → 순환 참조의 문제 발생
-        // console.log(JSON.stringify(errors));
+        // ref 속성에서 발생하는 것으로 보임
+        console.log(JSON.stringify(errors, (key, value) => {
+            if (key === 'ref') {
+                return;
+            }
+
+            return value;
+        }));
     }
 
     return (
