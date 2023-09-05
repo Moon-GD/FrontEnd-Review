@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import { DevTool } from "@hookform/devtools";
+
 import { useForm, type SubmitHandler, type SubmitErrorHandler } from "react-hook-form";
 
 const userInfoSchema = z.object({
@@ -9,7 +11,7 @@ const userInfoSchema = z.object({
 type TUserInfoType = z.infer<typeof userInfoSchema>;
 
 const BasicUsage = () => {
-    const { register, handleSubmit } = useForm<TUserInfoType>();
+    const { control, register, handleSubmit } = useForm<TUserInfoType>();
 
     const onFormSubmit:SubmitHandler<TUserInfoType> = (userInfo: TUserInfoType) => {
         alert(JSON.stringify(userInfo));
@@ -27,7 +29,7 @@ const BasicUsage = () => {
         }));
     }
 
-    return (
+    return (<>
         <form onSubmit={handleSubmit(onFormSubmit, onFormSubmitError)}>
             <label htmlFor="name">이름 : </label>
             <input type="text" {...register('name')} id='name'/>
@@ -35,6 +37,8 @@ const BasicUsage = () => {
             <input type="text"  {...register('age', { required: true })} id='age'/>
             <input type="submit" value='submit'/>
         </form>
+        <DevTool control={control}/>
+    </>
     )
 }
 
