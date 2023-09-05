@@ -1,2 +1,3 @@
 # node
-/node/zod/node_modules
+/node/zod/src/node_modules
+/node/react hook form/src/node_modules

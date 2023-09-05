@@ -32,7 +32,7 @@ $ npm i zod@canary
 
 ## 3️⃣ 간단 문법 활용해보기
 
-- <a href="./source/basic.ts">간단한 코드 바로 보기</a>
+- <a href="./src/basic.ts">간단한 코드 바로 보기</a>
 - zod primitive types
 
 | 메소드        | type             |
@@ -52,14 +52,14 @@ $ npm i zod@canary
 
 - 개인적으로는 좋은 방법이라고 생각하지는 않지만, 상황에 따라 형 변환이 강제로 필요할 경우 활용 가능
 - type checking에서도 강제로 형 변환을 통해 통과시킬 수도 있음!
-- <a href="./source/coericon.ts">소스 코드</a>에 한 번 끄적여보면 충분할 듯하다.
+- <a href="./src/coericon.ts">소스 코드</a>에 한 번 끄적여보면 충분할 듯하다.
 
 <br />
 
 ## 5️⃣ 추가 검증
 
-- refine, min, max 등의 체이닝을 통해서 추가 검증 조건을 검증할 수 있다 → <a href="./source/additionalTest.ts">예제 파일</a>
-- optional()을 통해 property가 선택적으로 필요함도 작성할 수 있다 → <a href="./source/optionalTest.ts">예제 파일</a>
+- refine, min, max 등의 체이닝을 통해서 추가 검증 조건을 검증할 수 있다 → <a href="./src/additionalTest.ts">예제 파일</a>
+- optional()을 통해 property가 선택적으로 필요함도 작성할 수 있다 → <a href="./src/optionalTest.ts">예제 파일</a>
 
 <br />
 
