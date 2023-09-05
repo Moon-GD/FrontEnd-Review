@@ -3,7 +3,7 @@ import { useForm, type SubmitHandler, type SubmitErrorHandler } from "react-hook
 
 const userInfoSchema = z.object({
     name: z.string().min(2, { message:'2글자 이상' }),
-    age: z.number().min(1, { message : 'age should be positive'}),
+    age: z.number()
 });
 
 type TUserInfoType = z.infer<typeof userInfoSchema>;
@@ -16,7 +16,8 @@ const BasicUsage = () => {
     }
 
     const onFormSubmitError:SubmitErrorHandler<TUserInfoType> = (errors, e) => {
-        alert(JSON.stringify(errors));
+        // TODO : errors가 문자열로 파싱이 안됨 → 순환 참조의 문제 발생
+        // console.log(JSON.stringify(errors));
     }
 
     return (
